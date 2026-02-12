@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Javier Millar - Portfolio Moderno
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una versión modernizada del portafolio personal, migrado de HTML estático a **React + TypeScript + Vite**.
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El código ha sido dividido en componentes reutilizables para facilitar la mantención y escalabilidad:
 
-## React Compiler
+- **src/components/**: Contiene todas las secciones de la página (Header, Hero, Services, etc.).
+- **src/App.tsx**: Componente principal que orquesta la estructura.
+- **src/index.css**: Estilos globales y variables CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Comandos Disponibles
 
-## Expanding the ESLint configuration
+1.  **Instalar dependencias**:
+    ```bash
+    npm install
+    ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2.  **Iniciar servidor de desarrollo**:
+    ```bash
+    npm run dev
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3.  **Construir para producción**:
+    ```bash
+    npm run build
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Despliegue en Vercel
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Para desplegar este proyecto en Vercel:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  Instala Vercel CLI: `npm i -g vercel`
+2.  Ejecuta `vercel` en la raíz del proyecto y sigue las instrucciones.
+3.  O conecta tu repositorio de GitHub directamente en el dashboard de Vercel.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Conexión a GitHub
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  Crea un nuevo repositorio en GitHub.
+2.  Ejecuta:
+    ```bash
+    git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
+    git branch -M main
+    git push -u origin main
+    ```
